@@ -11,8 +11,13 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // Routes
-app.use('/api/auth', require('./routes/auth.routes'));
-app.use('/api/vehicles', require('./routes/vehicle.routes'));
+app.use('/api/auth',         require('./routes/auth.routes'));
+app.use('/api/vehicles',     require('./routes/vehicle.routes'));
+app.use('/api/maintenances', require('./routes/maintenance.routes'));
+app.use('/api/pieces',       require('./routes/piece.routes'));
+app.use('/api/decomptes',    require('./routes/decompte.routes'));
+app.use('/api/stock',        require('./routes/stock.routes'));
+app.use('/api/dashboard',    require('./routes/dashboard.routes'));
 
 // Route de santé
 app.get('/api/health', (req, res) => {
